@@ -1,6 +1,6 @@
-##브라우저 렌더링 동작 과정
+## 브라우저 렌더링 동작 과정
 
-###웹 브라우저의 구조
+### 웹 브라우저의 구조
 
 ![Basic structure of the browser](https://blog.kakaocdn.net/dn/99dKj/btqIl9g441B/2zBd7Ya63bkgHiSdM8Vm4k/img.png)
 
@@ -12,13 +12,13 @@
 - `Data Persistence` : localStorage나 Cookie와 같이 보조 기억장치에 데이터를 저장하는 파트
 - `Javascript Interpreter` : 자바스크립트 코드를 실행하는 인터프리터 (크롬의 경우 V8)
 
-###렌더링 엔진의 목표
+### 렌더링 엔진의 목표
 
 1. HTML,CSS,JS,이미지 등 웹 페이지에 포함된 모든 요소들을 화면에 보여준다.
 2. 업데이트가 필요할 때, 효율적으로 렌더링을 할 수 있도록 자료 구조를 생성한다.
    여기서 업데이트는 사용자 동작으로 인해서 입력 발생, 스크롤 발생, 애니메이션 동작, 비동기요청으로 인한 데이터 로딩 등
 
-###Critical Rendering Path
+### Critical Rendering Path
 
 1. HTML 파일과 CSS파일을 파싱해서 각각 Tree를 만든다. (Parsing)
 2. 두 Tree를 결합하여 Rendering Tree를 만든다. (Style)
@@ -77,7 +77,7 @@
    - Layout과 Paint를 수행하지 않고 레이어의 합성만 발생하기 때문에 성능상으로 가장 큰 이점을 가짐
      <br/>
 
-####DOM과 Virtual DOM
+#### DOM과 Virtual DOM
 자바스크립트 로직에 의해 항목 중 한 군데라도 변화가 일어나면 DOM의 모든 항목은 다시 그려진다. 이에 따라 속도가 저하된다.
 
 반면에, 리액트는 DOM을 추상화한 객체인 Virtual DOM이라는 것을 일종의 사본처럼 미리 생성해두고 항목에 변화가 생기면 전체 UI를 Re-render를 한다. 그러나 새로 렌더된 뷰를 다시 그리는 것이 아닌 DOM과 비교 후 바뀐 부분만 실제 DOM에 적용하여 새로 그려지도록 한다.
